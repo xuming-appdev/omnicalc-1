@@ -50,7 +50,8 @@ def calculate_payment
   @annual_rate=params.fetch("user_apr").to_f
   @period_year=params.fetch("user_years").to_f
   @princial_amount=params.fetch("user_pv").to_f
-  @result=@period_year **2
+  @result1=@annual_rate/1200*@princial_amount
+  @result2=1-(1+@annual_rate/1200)**(-@period_year*12)
 
 render({ :template=> "calculation_templates/payment_results.html.erb"})
 end

@@ -3,16 +3,16 @@
 <dl>
 
 <dt> APR </dt>
-<dd> <%= @annual_rate %></dd>
+<dd> <%= @annual_rate.to_s(:percentage, { :precision => 4 }) %></dd>
 
 <dt> Number of years</dt>
 <dd> <%= @period_year %> </dd>
 
 <dt> Principal </dt>
-<dd> <%= @princial_amount %></dd>
+<dd> <%= @princial_amount.to_s(:currency, { :precision => 2 }) %></dd>
 
 <dt> Payment </dt>
-<dd> <%= @result %></dd>
+<dd> <%= (@result1/@result2).to_s(:currency, { :precision => 2 }) %></dd>
 
 </dl>
 
