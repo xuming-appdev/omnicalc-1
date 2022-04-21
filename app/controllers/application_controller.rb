@@ -40,5 +40,21 @@ def calculate_random
 render({ :template=> "calculation_templates/rand_results.html.erb"})
 end
 
+def blank_payment_form
+
+  render({ :template=> "calculation_templates/payment_form.html.erb"})
+end
+
+def calculate_payment
+
+  @annual_rate=params.fetch("user_apr").to_f
+  @period_year=params.fetch("user_years").to_f
+  @princial_amount=params.fetch("user_pv").to_f
+  @result=@period_year **2
+
+render({ :template=> "calculation_templates/payment_results.html.erb"})
+end
+
+
 
 end
